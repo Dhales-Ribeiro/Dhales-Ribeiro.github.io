@@ -1,1 +1,42 @@
-Hello World
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="DR">
+<head>
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
+
+        <title>Dhales Ribeiro - Web Developer / Front-End / Angular JS</title>
+
+        <link rel="icon" type="image/png" href="./public/dhales.png" />
+
+        <!-- CSS -->
+        <link href="public/css/all.css" rel="stylesheet">
+
+        <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
+        <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+</head>
+<body ng-controller="applicationController" class="bg-grey-900" style="background: url('./public/images/portfolio_bg.pg.png') #252627;">
+<div class="page-loading" id="page-loading" style="background: url('./public/images/portfolio_bg.pg.png') #252627;  background-size:100% auto;">
+    <div class="inner">
+        <span>Loading...</span>
+        <div id="pbar_inner" style="background-color: #004D40; z-index: 2; height: 3px; width: 100%;">
+            <div id="pbar_innerdiv" style="background-color: #26A69A; z-index: 2; height: 3px; width: 0%;"></div>
+        </div>
+    </div>
+</div>
+<div ui-view></div>
+<div id="particles-js"></div>
+
+<!-- Inclui todos os plugins minificados (abaixo), ou inclua arquivos separadados se necessário -->
+<script src="public/js/all.js"></script>
+</body>
+</html>

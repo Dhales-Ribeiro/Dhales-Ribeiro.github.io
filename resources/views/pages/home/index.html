@@ -1,0 +1,85 @@
+<style>
+
+</style>
+
+<script>
+    (function($){$.fn.hoverIntent=function(handlerIn,handlerOut,selector){var cfg={interval:100,sensitivity:6,timeout:0};if(typeof handlerIn==="object"){cfg=$.extend(cfg,handlerIn)}else{if($.isFunction(handlerOut)){cfg=$.extend(cfg,{over:handlerIn,out:handlerOut,selector:selector})}else{cfg=$.extend(cfg,{over:handlerIn,out:handlerIn,selector:handlerOut})}}var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if(Math.sqrt((pX-cX)*(pX-cX)+(pY-cY)*(pY-cY))<cfg.sensitivity){$(ob).off("mousemove.hoverIntent",track);ob.hoverIntent_s=true;return cfg.over.apply(ob,[ev])}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob)},cfg.interval)}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=false;return cfg.out.apply(ob,[ev])};var handleHover=function(e){var ev=$.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t)}if(e.type==="mouseenter"){pX=ev.pageX;pY=ev.pageY;$(ob).on("mousemove.hoverIntent",track);if(!ob.hoverIntent_s){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob)},cfg.interval)}}else{$(ob).off("mousemove.hoverIntent",track);if(ob.hoverIntent_s){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob)},cfg.timeout)}}};return this.on({"mouseenter.hoverIntent":handleHover,"mouseleave.hoverIntent":handleHover},cfg.selector)}})(jQuery);
+
+    $(".letras").hoverIntent({
+        sensitivity: 3, // number = sensitivity threshold (must be 1 or higher)
+        interval: 1, // number = milliseconds for onMouseOver polling interval
+        timeout: 500, // number = milliseconds delay before onMouseOut
+        over:function(){
+            $(this).addClass("animated rubberBand");
+        },
+        out: function(){
+            $(this).removeClass("animated rubberBand");
+        }
+    });
+</script>
+<div class="animated fadeIn" style="-webkit-animation-delay: 1s">
+
+    <br>
+    <span class="tags top-tags"> &nbsp;&nbsp;&nbsp;&lt;html lang='pt-br'&gt;</span><p>
+    <span class="tags top-tags"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;</span>
+    <span class="tags top-tags"> &nbsp;&lt;/head&gt;</span><p>
+    <span class="tags top-tags"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;</span><p>
+    <div class="text-zone">
+        <span class="tags top-tags"> &lt;h1&gt;</span><br>
+        <h1>
+            <span class="letras">O</span>
+            <span class="letras">l</span>
+            <span class="letras">á</span>
+            <span class="letras">,</span>
+            <br>
+            <span class="letras">E</span>
+            <span class="letras">u</span>
+            <span class="letras">&nbsp;</span>
+            <span class="letras">S</span>
+            <span class="letras">o</span>
+            <span class="letras">u</span>
+            <span class="letras">&nbsp;</span>
+            <span class="letras">D</span>
+            <span class="letras">h</span>
+            <span class="letras">a</span>
+            <span class="letras">l</span>
+            <span class="letras">e</span>
+            <span class="letras">s</span>
+            <span class="letras">&nbsp;</span>
+            <span class="letras">R</span>
+            <span class="letras">i</span>
+            <span class="letras">b</span>
+            <span class="letras">e</span>
+            <span class="letras">i</span>
+            <span class="letras">r</span>
+            <span class="letras">o</span>
+            <span class="letras">,</span>
+            <br>
+            <span class="letras">W</span>
+            <span class="letras">e</span>
+            <span class="letras">b</span>
+            <span class="letras">&nbsp;</span>
+            <span class="letras">D</span>
+            <span class="letras">e</span>
+            <span class="letras">v</span>
+            <span class="letras">e</span>
+            <span class="letras">l</span>
+            <span class="letras">o</span>
+            <span class="letras">p</span>
+            <span class="letras">e</span>
+            <span class="letras">r</span>
+            <span class="letras">.</span>
+            <br>
+
+            <h2>Front End Developer / Angular JS</h2>
+            <br>
+            <span class="tags top-tags"> &lt;/h1&gt;</span><br>
+        </h1>
+    </div>
+
+    <div class="bottom-tags">
+        <span class="tags">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;</span><p>
+        <span class="tags"> &nbsp;&nbsp;&nbsp;&lt;/html&gt;</span>
+    </div>
+
+</div>

@@ -1,0 +1,281 @@
+// -------------------------------------------------------------------------
+//  Configuando corpo do documento
+// -------------------------------------------------------------------------
+html {
+  background-color: @body-bg;
+}
+body {
+  font-family: @font-family-base;
+  font-size: @font-size-base;
+  color: @text-color;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  line-height: @line-height-base;
+  overflow: hidden;
+}
+
+// -------------------------------------------------------------------------
+//  Add font La Belle Aurore
+// -------------------------------------------------------------------------
+@font-face {
+  font-family: 'La Belle Aurore';
+  font-style: normal;
+  font-weight: 400;
+  src: local('La Belle Aurore'), local('LaBelleAurore'), url(https://fonts.gstatic.com/s/labelleaurore/v7/Irdbc4ASuUoWDjd_Wc3md8dxVGbf3qyhvoXHfU-LjZg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+// -------------------------------------------------------------------------
+//  Add font MaterialIcons
+// -------------------------------------------------------------------------
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+  url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+  url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+// -------------------------------------------------------------------------
+//  Removendo linhas em volta dos links
+// -------------------------------------------------------------------------
+*:focus {
+  outline: 0 !important;
+}
+
+// -------------------------------------------------------------------------
+//  Definindo definindo fonte de testos para os Headers
+// -------------------------------------------------------------------------
+h1, h2, h3,
+.h1, .h2, .h3{
+  font-family: @font-family-header;
+}
+
+// -------------------------------------------------------------------------
+//  Removendo as margins dos headers
+// -------------------------------------------------------------------------
+.h1, .h2, .h3, .h4, .h5, .h6{
+  margin: 0;
+}
+
+// -------------------------------------------------------------------------
+//  Configurando links
+// -------------------------------------------------------------------------
+a {
+  color: @link-color;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+}
+a:hover,
+a:focus {
+  color: @link-color;
+  text-decoration: none;
+}
+
+// -------------------------------------------------------------------------
+//  Configurando tamanho para small
+// -------------------------------------------------------------------------
+small,
+.small{
+  font-size: @font-size-sm;
+}
+
+// -------------------------------------------------------------------------
+//  Configurando labels
+// -------------------------------------------------------------------------
+label{
+  font-weight: normal;
+}
+
+// -------------------------------------------------------------------------
+//  Definindo labels LG
+// -------------------------------------------------------------------------
+.label-lg{
+  font-size: @font-size-md;
+  padding: 5px 9px;
+}
+
+// -------------------------------------------------------------------------
+//  Definindo labels SM
+// -------------------------------------------------------------------------
+.label-sm{
+  padding: 2px 5px;
+}
+
+// -------------------------------------------------------------------------
+//  Definindo labels XS
+// -------------------------------------------------------------------------
+.label-xs{
+  padding: 1px 4px;
+}
+
+// -------------------------------------------------------------------------
+//  Ajustando SM
+// -------------------------------------------------------------------------
+@media (min-width: 768px) and (max-width: 991px) {
+  .pull-none-sm{
+    float: none !important;
+  }
+  .pull-right-sm{
+    float: right !important;
+  }
+  .pull-left-sm{
+    float: left !important;
+  }
+  .hidden-sm.show{
+    display: inherit !important;
+  }
+}
+
+// -------------------------------------------------------------------------
+//  Ajustando XS
+// -------------------------------------------------------------------------
+@media (max-width: 767px) {
+
+  .text-zone h1{
+    font-size: 17px !important;
+  }
+
+  .pull-none-xs{
+    float: none !important;
+  }
+  .pull-right-xs{
+    float: right !important;
+  }
+  .pull-left-xs{
+    float: left !important;
+  }
+  .hidden-xs.show{
+    display: inherit !important;
+  }
+}
+
+.letras{
+  //margin-right: -9px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.letras:hover{
+  color: #26A69A;
+}
+
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999999;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.page-loading .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 400px;
+  max-width: 100%;
+  height: 160px;
+  text-align: center;
+  padding: 20px;
+}
+.link {
+  border-bottom: 1px dotted #fff;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.b_radio{
+  border-radius: 25px;
+}
+.padding {
+  padding: 32px;
+}
+.no-padding {
+  padding: -32px;
+}
+
+.tags {
+  color: #CCC ;
+  font-size: 18px;
+  font-family: 'La Belle Aurore', cursive;
+
+}
+.top-tags {
+  bottom: auto;
+  top:0px;
+}
+.bottom-tags {
+  position: fixed;
+  clear:both;
+  float:left;
+  margin-top: 22px;
+  bottom:0
+}
+
+.text-zone {
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 90%;
+  max-height: 90%;
+}
+.text-zone h1{
+  font-size: 2.0vw;
+  font-weight: bold;
+}
+
+.text-zone h2 {
+  color:#8d8d8d;
+  margin-top: 9px;
+  font-weight: normal;
+  font-size: 12px;
+  //font-size: 1.8vw;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 3px;
+  -webkit-animation: myanim2 1s 2.5s backwards;
+  animation: myanim2 1s 2.5s backwards;
+}
+.fa{
+  font-size: 25px!important;
+}

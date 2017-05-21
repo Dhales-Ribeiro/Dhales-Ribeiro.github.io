@@ -1,0 +1,124 @@
+// -------------------------------------------------------------------------
+// { Created by Dhales Ribeiro on 17/12/16. }
+// -------------------------------------------------------------------------
+// Configuração Global para todos styles
+// -------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------
+//  Definindo as cores principais
+// -------------------------------------------------------------------------
+@primary:           #3f51b5;
+@info:              #2196f3;
+@success:           #4caf50;
+@warning:           #ffc107;
+@danger:            #f44336;
+@accent:            #7e57c2;
+@light:             #eaebec;
+@dark:              #475069;
+
+// -------------------------------------------------------------------------
+//  Definindo cores para o plano de fundo e textos
+// -------------------------------------------------------------------------
+@body-bg:                 #FFF;
+@text-color:              rgba(0, 0, 0, 0.87);
+@text-muted:              rgba(0, 0, 0, 0.54);
+
+// -------------------------------------------------------------------------
+//  Definindo transparencia
+// -------------------------------------------------------------------------
+
+@transparent: rgba(0, 0, 0, 0);
+@full-black:  rgba(0, 0, 0, 1);
+@dark-black:  rgba(0, 0, 0, 0.87);
+@light-black: rgba(0, 0, 0, 0.54);
+@min-black:   rgba(0, 0, 0, 0.26);
+@faint-black: rgba(0, 0, 0, 0.12);
+
+@full-white:  rgba(255, 255, 255, 1);
+@dark-white:  rgba(255, 255, 255, 0.87);
+@light-white: rgba(255, 255, 255, 0.54);
+
+// -------------------------------------------------------------------------
+//  Definindo fontes padrões
+// -------------------------------------------------------------------------
+@font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-base:        @font-family-sans-serif;
+@font-family-header:      @font-family-sans-serif;
+
+// -------------------------------------------------------------------------
+//  Definindo tamanho da fonte padrão
+// -------------------------------------------------------------------------
+@font-size-base:          14px;
+@font-size-xl:            ceil(@font-size-base * 2.28); // ~32px
+@font-size-lg:            ceil(@font-size-base * 1.71); // ~24px
+@font-size-md:            ceil(@font-size-base * 1.14); // ~16px
+@font-size-sm:            ceil(@font-size-base * 0.92); // ~13px
+@font-size-xs:            ceil(@font-size-base * 0.85); // ~12px
+@font-size-xxs:           ceil(@font-size-base * 0.71); // ~10px
+
+// -------------------------------------------------------------------------
+//  Definindo line-height
+// -------------------------------------------------------------------------
+@line-height-base:        1.42857143; // 20/14
+@line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
+
+// -------------------------------------------------------------------------
+//  Redefinindo cor do link e pocentagens
+// -------------------------------------------------------------------------
+@link-color:              inherit;
+@text-percent:            40%;
+@link-percent:            50%;
+@color-percent:           5%;
+@color-lt-percent:        5%;
+
+// -------------------------------------------------------------------------
+//  Redefinindo bordas e cores de bordas
+// -------------------------------------------------------------------------
+@border-radius-base:      3px;
+@border-color:		  	  darken(@light, 5%);
+@border-rgba:			  rgba(110, 115, 120, 0.15);
+
+// -------------------------------------------------------------------------
+//  Badge backgroud
+// -------------------------------------------------------------------------
+@badge-bg:                darken(@light, 25%);
+
+// -------------------------------------------------------------------------
+//  Configurando navbrs
+// -------------------------------------------------------------------------
+@navbar-height:                  64px;
+@navbar-sm-height:               56px;
+@aside-width:                    240px;
+@aside-folded-width:             64px;
+@aside-nav-height:               40px;
+@aside-nav-folded-height:        50px;
+@aside-nav-sub-height:           36px;
+@aside-nav-stacked-height:       30px;
+
+@aside-max: 			         991px;
+@aside-min: 			         959px;
+
+
+@nav-bg:                         darken(@light, 1%);
+@nav-color:                      @text-color;
+@nav-active-color:               darken(@nav-color, 5%);
+@nav-pills-active-color:         @text-color;
+@nav-pills-active:               darken(@light, 5%);
+
+
+
+// -------------------------------------------------------------------------
+//  Configurando Panels
+// -------------------------------------------------------------------------
+@panel-bg:                    	 #fff;
+@panel-border:                	 @border-color;
+@panel-heading-border:           lighten(@border-color, 5%);
+@panel-list-group-border:        lighten(@border-color, 5%);
+@panel-border-radius:         	 @border-radius-base;
+@panel-heading-sm:               36px;
+@panel-heading-xs:               32px;
+@panel-heading-bg:            	 lighten(@light, 3%);
+@panel-footer-bg:             	 @panel-heading-bg;

@@ -1,0 +1,37 @@
+<!-- menu da Esquerda -->
+
+<md-toolbar class="md-tall" style="z-index: 61">
+    <h2 class="md-toolbar-tools bg-deep-purple-900">
+        <span class="md-flex" ui-sref="app.home"><img src="/public/images/dhales.png" style="
+    height: 21px;
+"></span>
+    </h2>
+    <h2 class="md-toolbar-tools bg-grey-900" style="padding: 0 25px 0 8px;">
+        <span class="md-flex">
+            <md-button class="md-icon-button" aria-label="More" ng-click="toggleLeft()">
+                <md-icon class="material-icons">exit_to_app</md-icon>
+            </md-button>
+        </span>
+        <span ng-click="toggleLeft()" style="padding-right: 20px">
+            Dhales Ribeiro
+        </span>
+
+        <md-button class="hidden-xs" ui-sref="app.home">Inicial</md-button>
+        <md-button class="hidden-xs" ui-sref="app.sobre">Sobre</md-button>
+        <md-button class="hidden-xs" ui-sref="app.skills">Habilidades</md-button>
+        <!--<md-button class="hidden-xs">Trabalhos</md-button>-->
+
+        <span flex class="hidden-xs"></span>
+
+        <md-button class="hidden-xs">
+            <md-icon class="material-icons">insert_comment</md-icon>
+            Contato
+        </md-button>
+
+    </h2>
+</md-toolbar>
+
+
+<md-sidenav md-disable-backdrop id="left" class="app-left md-sidenav-left hide_menu" ui-view="leftMenu@" md-component-id="left" ></md-sidenav>
+
+<div ui-view="content@" class="app-content"></div>

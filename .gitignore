@@ -1,0 +1,79 @@
+# ------------------------------------------------------------------------------------
+# Arquivos do sistema operacional
+# ------------------------------------------------------------------------------------
+# Windows
+# ------------------------------------------------------------------------------------
+
+# Cache de arquivos do Windows
+Thumbs.db
+ehthumbs.db
+
+# Arquivo de configuração da pasta
+Desktop.ini
+
+# Lixeira usada em compartilhamentos de arquivos
+$RECYCLE.BIN/
+
+# Arquivos do Windows Installer
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Atalhos do Windows
+*.lnk
+
+
+# ------------------------------------------------------------------------------------
+# Arquivos do sistema operacional
+# ------------------------------------------------------------------------------------
+# OSX
+# ------------------------------------------------------------------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Arquivos que podem aparecer na raiz de um volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Diretórios potencialmente criados em compartilhamento AFP remoto
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+# ------------------------------------------------------------------------------------
+# Arquivos de Editores
+# ------------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------------
+
+.idea
+.project
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+.komodotools
+*.komodoproject
+
+
+# ------------------------------------------------------------------------------------
+# Pastas para Ignorar
+# ------------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------------
+
+node_modules

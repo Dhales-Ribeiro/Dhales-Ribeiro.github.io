@@ -1,0 +1,95 @@
+<script>
+    (function($){$.fn.hoverIntent=function(handlerIn,handlerOut,selector){var cfg={interval:100,sensitivity:6,timeout:0};if(typeof handlerIn==="object"){cfg=$.extend(cfg,handlerIn)}else{if($.isFunction(handlerOut)){cfg=$.extend(cfg,{over:handlerIn,out:handlerOut,selector:selector})}else{cfg=$.extend(cfg,{over:handlerIn,out:handlerIn,selector:handlerOut})}}var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if(Math.sqrt((pX-cX)*(pX-cX)+(pY-cY)*(pY-cY))<cfg.sensitivity){$(ob).off("mousemove.hoverIntent",track);ob.hoverIntent_s=true;return cfg.over.apply(ob,[ev])}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob)},cfg.interval)}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=false;return cfg.out.apply(ob,[ev])};var handleHover=function(e){var ev=$.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t)}if(e.type==="mouseenter"){pX=ev.pageX;pY=ev.pageY;$(ob).on("mousemove.hoverIntent",track);if(!ob.hoverIntent_s){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob)},cfg.interval)}}else{$(ob).off("mousemove.hoverIntent",track);if(ob.hoverIntent_s){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob)},cfg.timeout)}}};return this.on({"mouseenter.hoverIntent":handleHover,"mouseleave.hoverIntent":handleHover},cfg.selector)}})(jQuery);
+
+    $(".letras").hoverIntent({
+        sensitivity: 3, // number = sensitivity threshold (must be 1 or higher)
+        interval: 1, // number = milliseconds for onMouseOver polling interval
+        timeout: 500, // number = milliseconds delay before onMouseOut
+        over:function(){
+            $(this).addClass("animated rubberBand");
+        },
+        out: function(){
+            $(this).removeClass("animated rubberBand");
+        }
+    });
+</script>
+<div class="animated fadeIn no-padding hidden-xs"  layout="row" style="min-height: 100%; -webkit-animation-delay: 1s">
+    <div flex="40" style="background: url('./public/images/CYMERA_20140731_154943.jpg'); background-size:100% auto; background-repeat: no-repeat">
+    </div>
+
+    <div flex class="padding">
+        <h1>
+            Sobre Dhales Ribeiro
+        </h1>
+        <h3>Informações Basicas</h3>
+
+        <table style="max-width: 600px; width: 100%">
+            <tr>
+                <td>Aniversário</td>
+                <td>1 Março</td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td>dhales@imixle.com.br</td>
+            </tr>
+            <tr>
+                <td>Idade</td>
+                <td>28</td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+
+        <div style="max-width: 600px; text-align: justify;">
+            <p>Desde os meus 15 anos estou fascinado com tecnologias front-end, e toda a  magia e as possibilidades do HTML5 / CSS3 / Javascript.</p>
+            <p>Estou me especializando em JavaScript, design responsivo, animação, SEO e desempenho.</p>
+            <p>A primeira metade da minha experiência de trabalho foi trabalhando como técnico de informatica até me tornar Administrador de redes de computadores.</p>
+            <p>A Segunda metade e a atual, foi como <a class="link teal-800" ui-sref="app.webdeveloper" style="cursor: help;"><span class="letras">Web</span> <span class="letras">Developer</span></a> desenvolvendo wesites e sistemas.</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="animated fadeIn no-padding hidden-lg visible-xs"  layout="column" style="min-height: 100%">
+    <div flex="40" style="background: url('./public/images/CYMERA_20140731_154943.jpg');  background-size:100% auto; background-repeat: no-repeat; max-width: 100%; min-height: 488px">
+    </div>
+
+    <div flex class="padding">
+        <h1>
+            Sobre Dhales Ribeiro
+        </h1>
+        <h3>Informações Basicas</h3>
+
+        <table style="max-width: 600px; width: 100%">
+            <tr>
+                <td>Aniversário</td>
+                <td>1 Março</td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td>dhales@imixle.com.br</td>
+            </tr>
+            <tr>
+                <td>Idade</td>
+                <td>28</td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+
+        <div style="max-width: 600px; text-align: justify;">
+            <p>Desde os meus 15 anos estou fascinado com tecnologias front-end, e toda a  magia e as possibilidades do HTML5 / CSS3 / Javascript.</p>
+            <p>Estou me especializando em JavaScript, design responsivo, animação, SEO e desempenho.</p>
+            <p>A primeira metade da minha experiência de trabalho foi trabalhando como técnico de informatica até me tornar Administrador de redes de computadores.</p>
+            <p>A Segunda metade e a atual, foi como <a class="link teal-800" ui-sref="app.webdeveloper" style="cursor: help;"><span class="letras">Web</span> <span class="letras">Developer</span></a> desenvolvendo wesites e sistemas.</p>
+        </div>
+
+    </div>
+
+    </div>
+
+</div>
